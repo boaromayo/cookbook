@@ -1,7 +1,7 @@
 # !/usr/bin/ruby
 # -*- coding: utf-8 -*-
 #
-# regex_practice.rb
+# Regex_Practice.rb
 #
 # Copyright 5/16/2017, renewed 5/29/2017 <boaromayo@retropie>
 #
