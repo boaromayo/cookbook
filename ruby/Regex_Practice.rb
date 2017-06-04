@@ -9,7 +9,7 @@
 # regexps, or regular expressions, in Ruby.
 #
 
-class RegexPractice
+class Regex_Practice
 	def initialize
 		@text = "Any regular expressions here?"
 		puts @text
@@ -32,7 +32,7 @@ class RegexPractice
 	end
 end
 
-regex = RegexPractice.new
+regex = Regex_Practice.new
 str = "Things aren't so good here!"
 
 regex.text = str
