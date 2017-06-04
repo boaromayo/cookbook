@@ -1,10 +1,17 @@
+# !/usr/bin/ruby
+# -*- coding: utf-8 -*-
+#
+# Spec_Math.rb
+#
+# Copyright 3/23/2015, renewed 6/3/2017 <boaromayo@retropie>
+#
 #======================================================
-# ** SpecMath
+# ** Spec_Math
 #------------------------------------------------------
 #  Custom Numeric class for easy number manipulation.
 #======================================================
 
-class SpecMath
+class Spec_Math
 	attr_accessor :num	# Quicker way of accessing (setting/getting) class properties
 
 	# CONSTRUCTOR FOR SpecMath(num).
