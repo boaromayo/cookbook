@@ -34,7 +34,7 @@ class Window(QtGui.QMainWindow):
 		
 		# Move, resize, and set title
 		self.setGeometry(200, 200, self.__screenWidth, self.__screenHeight)
-		self.setWindowTitle("Font Changer/Drop Down Styler")
+		self.setWindowTitle("Font & Color Styler")
 		
 		# Handle menu bar creation
 		self.menu_bar()
@@ -122,7 +122,7 @@ class Window(QtGui.QMainWindow):
 	def set_font(self):
 		font, ok = QtGui.QFontDialog.getFont()
 		if ok:
-			self.styleLabel.setFont(font)
+			self.styleLabel.setFont(font)	
 		
 	def __main__(self):
 		self.show()	

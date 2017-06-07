@@ -3,7 +3,7 @@
 #
 #  qtsample6.py
 #  
-#  Copyright 5/22/2017  <boaromayo@retropie>
+#  Copyright 5/22/2017, renewed 6/7/2017  <boaromayo@retropie>
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -45,8 +45,18 @@ class Window(QtGui.QMainWindow):
 		# Call status bar
 		self.statusBar()
 		
-		self.__main__()
+		self.color = QtGui.QColor(0,0,0)
 		
+		self.fontColor = QtGui.QAction("Font Color", self)
+		self.fontColor.triggered.connect(self.set_color)
+		
+		# Make a calendar
+		calendar = QtGui.QCalendarWidget(self)
+		calendar.move(50,50)
+		calendar.resize(200,200)
+		
+		self.__main__()
+				
 	# Construct menu bar 
 	def menu_bar(self):
 		# Actions here
@@ -82,10 +92,14 @@ class Window(QtGui.QMainWindow):
 			"About",
 			"Grand Window Setup\nCopyright (c) 2017 boaromayo (Nico Poblete)")
 		
-	def set_color(self):
-		color, ok = QtGui.QColorPicker.getColor()
+	def set_font(self):
+		font, ok = QtGui.QFontDialog.getFont()
 		if ok:
-			self.styleLabel.setColor(color)
+			self.styleLabel.setFont(font)
+			
+	def set_color(self):
+		color = QtGui.QColorDialog.getColor()
+		self.styleChoice.setStyleSheet("QWidget { font-color: %s }" % color.name())
 	
 	def __main__(self):
 		self.show()
