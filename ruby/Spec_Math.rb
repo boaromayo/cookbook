@@ -1,4 +1,4 @@
-# !/usr/bin/ruby
+#!/usr/bin/ruby
 # -*- coding: utf-8 -*-
 #
 # Spec_Math.rb
@@ -53,6 +53,10 @@ class Spec_Math
 		@num = (a == 0) ? @num : (@num % a)
 	end
 	
+	def is_neg
+		@num < 0
+	end
+
 	def is_even
 		@num.to_i % 2 == 0
 	end
@@ -64,6 +68,7 @@ class Spec_Math
 	def is_prime
 		if (@num.to_i % 2 != 0 && @num.to_i != 2)
 			return true
+		end
 	end
 	
 	def plusone
