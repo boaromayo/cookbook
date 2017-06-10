@@ -16,6 +16,6 @@ int main() {
 	int n = 0;
 	cin >> n;
 	int i = fib(n);
-	
+
 	cout << i;
 }
