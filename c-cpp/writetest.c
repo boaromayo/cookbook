@@ -27,21 +27,22 @@
 int main(int argc, char **argv) {
 	FILE * file;
 	const int STUFF = 4;
-	int month, day, year;
-	string event;
-	
+	char * month;
+	int day, year;
+	char * event;
+
 	// Make a text file and make it writeable
 	file = fopen("history.txt", "w");
-	
+
 	while (!feof(file)) {
-		if (scanf("%d %d %d %s", &month, &day, &year, event) != STUFF) {
+		if (scanf("%s %d %d %s", month, &day, &year, event) != STUFF) {
 			break;
 		}
-		fprintf(file, "%d %d %d: %s", month, day, year, event);
+		fprintf(file, "%s %d %d: %s", month, day, year, event);
 	}
-	
+
 	fclose(file);
-	
+
 	return 0;
 }
 
