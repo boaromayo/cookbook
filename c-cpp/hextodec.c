@@ -28,8 +28,16 @@ int hex_to_dec(char* hex) {
 int main() {
 	char * hex = (char*)malloc(8);
 
-	scanf("%s", hex); // Ask for hexadecimal input
-	printf("%d\n", hex_to_dec(hex)); // Print out decimal equivalent
+	fgets(hex, 8, stdin); // Ask for hexadecimal input
+
+	// Take out trailing characters
+	if (strlen(hex) > 0 && hex[strlen(hex)-1] == '\n') {
+		hex[strlen(hex)-1] = '\0';
+	}
+
+	printf("%d\n", hex_to_dec(hex)); // Print decimal equivalent
+
+	free(hex); // Free buffer memory
 
 	return 0;
 }
