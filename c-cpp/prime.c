@@ -9,7 +9,7 @@ int main() {
 	int i = 0;
 
 	printf("Type a number: ");
-	scanf("%d", &i);
+	fgets(&i, 32, stdin);
 
 	if (isprime(i))
 	    printf("%d is prime\n", i);
