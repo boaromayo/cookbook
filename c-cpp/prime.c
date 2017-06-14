@@ -16,5 +16,6 @@ int main() {
 	else
 	    printf("%d is not prime\n", i);
 
+	free(i);
 	return 0;
 }
