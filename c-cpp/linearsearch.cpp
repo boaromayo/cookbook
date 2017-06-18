@@ -22,7 +22,7 @@ int main() {
 		std::cin >> a[i];
 		if (i != 0) {
 			if (a[i] < b) {
-				std::cout << "ERROR: Need number greater than or equal to the previous one." << std::endl;
+				std::cout << "ERROR: Need number greater than or equal to previous one." << std::endl;
 				return 1;
 			}
 		}
