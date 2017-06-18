@@ -14,11 +14,11 @@ int binarysearch(int * a, int len, int t) {
 		} else if (a[x] > t) { // If pivot > target, ignore stuff right of pivot.
 			r = x - 1;
 		} else if (a[x] == t) {
-			return x; // Return pivot if found.
+			return x; // Return position if found.
 		}
 	}
-	// Return if nothing found.
-	return 0;
+	// Return -1 if nothing found.
+	return -1;
 }
 
 int main() {
