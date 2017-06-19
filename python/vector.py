@@ -47,22 +47,25 @@ class Vec:
 	
 	def length(self):
 		return sqrt(self.a ** 2 + self.b ** 2)
-		
+
 	def dot(self,v):
 		return self.a * v.a + self.b * v.b
 
 	def __add__(self,v):
 		return Vec(self.a + v.a, self.b + v.b)
-	
+
 	def __sub__(self,v):
 		return Vec(self.a - v.a, self.b - v.b)
-	
+
 	def __mul__(self,m):
 		return Vec(m * self.a, m * self.b)
 
+	def __repr__(self):
+		return "Vec a: {} b: {}".format(self.a, self.b)
+
 	def __str__(self):
 		return "<{},{}>".format(self.a, self.b)
-		
+
 def main():
 	v = Vec(3,4)
 	print v
