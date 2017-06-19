@@ -30,11 +30,11 @@ class Point:
 	
 	def origin(self):
 		return Point(0,0)
-	
+
 	@property
 	def x(self):
 		return self.x
-	
+
 	@property
 	def y(self):
 		return self.y
