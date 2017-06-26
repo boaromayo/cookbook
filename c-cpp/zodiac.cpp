@@ -27,8 +27,8 @@
 #include <iterator>
 #include <vector>
 
-#define abs(a) (a < 0) ? (-a) : (a)
-#define leap(yr) (yr % 4 == 0) ? 1 : 0
+#define abs(a) ((a < 0) ? (-a) : (a))
+#define leap(yr) ((yr % 4 == 0) ? 1 : 0)
 
 std::string zodiac(int d, int m, int y) {
 	const int TWELVE = 12;
