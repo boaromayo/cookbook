@@ -1,4 +1,4 @@
-This is just simple test data, get your program working with this data before trying the larger data set.
+This is just simple test data, get program working with this data before trying the larger data set.
 data_array
 11
 12345
