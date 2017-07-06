@@ -19,9 +19,9 @@ class Enemy
 	int atkpower;
 	int exp, gold;
     public:
-	int level() { return lv; }
-	int getxp() { return exp; }
-	int getgold() { return gold; }
+	int level() const { return lv; }
+	int getxp() const { return exp; }
+	int getgold() const { return gold; }
 	string getname() { return name; }
     public:
 	virtual void attack() = 0;
