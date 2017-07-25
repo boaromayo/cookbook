@@ -29,7 +29,7 @@ class Vec3:
 	def __init__(self,a=0,b=0,c=0):
 		self.a = a
 		self.b = b
-    self.c = c
+    		self.c = c
 		
 	def zero(self):
 		return Vec(0,0,0)
@@ -52,11 +52,11 @@ class Vec3:
 	def dot(self,v):
 		return self.a * v.a + self.b * v.b + self.c * v.c
 
-  def cross(self,v):
-    s1 = self.b * v.c - self.c * v.b
-    s2 = self.c * v.a - self.a * v.c
-    s3 = self.a * v.b - self.b * v.a
-    return Vec(s1,s2,s3)
+  	def cross(self,v):
+    		s1 = self.b * v.c - self.c * v.b
+    		s2 = self.c * v.a - self.a * v.c
+    		s3 = self.a * v.b - self.b * v.a
+    		return Vec(s1,s2,s3)
     
 	def __add__(self,v):
 		return Vec(self.a + v.a, self.b + v.b, self.c + v.c)
