@@ -68,7 +68,7 @@ class Vec3:
 		return Vec(m * self.a, m * self.b, m * self.c)
 
 	def __repr__(self):
-		return "Vec a: {} b: {}".format(self.a, self.b, self.c)
+		return "Vec a: {} b: {} c: {}".format(self.a, self.b, self.c)
 
 	def __str__(self):
 		return "<{},{},{}>".format(self.a, self.b, self.c)
