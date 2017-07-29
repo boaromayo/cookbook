@@ -71,6 +71,8 @@ def main():
 	p.x = 1
 	p.y = 4
 	print p
+	p.translate(-1,-1)
+	print p
 	return 0
 
 if __name__ == '__main__':
