@@ -48,14 +48,17 @@ class Vec3:
 		
 	def length(self):
 		return sqrt(self.a ** 2 + self.b ** 2 + self.c ** 2)
-		
+			
 	def dot(self,v):
 		return self.a * v.a + self.b * v.b + self.c * v.c
+
+	def det(self,a,b,c,d):
+		return a*d - b*c
 		
 	def cross(self,v):
-		s1 = self.b * v.c - self.c * v.b
-		s2 = self.c * v.a - self.a * v.c
-		s3 = self.a * v.b - self.b * v.a
+		s1 = det(self.b,self.c,v.b,v.c)
+		s2 = det(self.c,self.a,v.c,v.a)
+		s3 = det(self.a,self.b,v.a,v.b)
 		return Vec3(s1,s2,s3)
 		
 	def __add__(self,v):
