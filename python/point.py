@@ -55,6 +55,9 @@ class Point:
 		self.x = self.x + dx
 		self.y = self.y + dy
 
+	def midpt(self,p):
+		return Point((p.x - x) / 2, (p.y - y) / 2)
+		
 	def __repr__(self):
 		return "Point is at x: {}, y: {}".format(self.x,self.y)
 
@@ -62,17 +65,20 @@ class Point:
 		return "({},{})".format(self.x,self.y)
 
 def main():
-	p = Point(0,0)
-	print p
-	p.move(2,6)
-	print p
-	p.translate(1,2)
-	print p
-	p.x = 1
-	p.y = 4
-	print p
-	p.translate(-1,-1)
-	print p
+	p1 = Point(0,0)
+	p2 = Point(3,4)
+	print p1
+	p1.move(2,6)
+	print p1
+	p1.translate(1,2)
+	print p1
+	p2.move(5,7)
+	print p2
+	p1.x = 1
+	p1.y = 4
+	print p1
+	p3 = p1.midpt(p2)
+	print p3
 	return 0
 
 if __name__ == '__main__':
