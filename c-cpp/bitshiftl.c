@@ -1,6 +1,7 @@
 /*
 *
 * bitshiftl.c
+* Copyright 8/19/2017 Nico Poblete/boaromayo <boaromayo@retropie>
 *
 */
 
