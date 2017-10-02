@@ -1,0 +1,28 @@
+//- layout-bp.pug - Website layout boilerplate.
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='HandheldFriendly' content='true')
+    meta(name='viewport' content='device-width')
+    link(rel='stylesheet' href='' type='text/css')
+    title= 'Sample Title Here'
+    meta(name='author' content=author)
+    meta(name='description' content=description)
+    meta(name='version' content=version)
+
+  body
+    header(role='banner')
+      div
+        nav
+          ul
+            li
+              a(href='/')
+
+    div.wrapper
+      main.content(aria-class='Content')
+        = contents
+
+    footer
+      div
+        p.copyright= &copy; Boilerplate
