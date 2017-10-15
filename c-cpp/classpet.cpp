@@ -23,6 +23,8 @@
  
 #include <iostream>
 
+Pet::Pet(std::string n) : name(n) {}
+
 void Pet::eat()
 {
 	std::cout << name << " eats food.\n";
@@ -38,7 +40,12 @@ void Pet::poop()
 	std::cout << name << " pooped! Pick it up!\n";
 }
 
-Dog::Dog() : name("Burmo") {}
+void Pet::playWith(Pet * pet)
+{
+	std::cout << name << " plays around with " << pet->name << " !\n";
+}
+
+Dog::Dog(std::string n) : name(n) {}
 
 void Dog::play() 
 {
@@ -50,7 +57,22 @@ void Dog::fetch()
 	std::cout << name << " fetches the ball.\n"
 }
 
-Cat::Cat() : name("Cal") {}
+void Dog::bark()
+{
+	std::cout << name << " barks!\n";
+}
+
+void Dog::whine()
+{
+	std::cout << name << " whines.\n";
+}
+
+void Dog::playWith(Cat * cat)
+{
+	std::cout << name << " chases " << cat->name << " !\n";
+}
+
+Cat::Cat(std::string n) : name(n) {}
 
 void Cat::play()
 {
@@ -62,17 +84,37 @@ void Cat::glare()
 	std::cout << name << " glares at you and judges you.\n";
 }
 
+void Cat::meow()
+{
+	std::cout << name << " meows.\n";
+}
+
+void Cat::purr()
+{
+	std::cout << name << " purrs lovingly.\n";
+}
+
+void Cat::yowl()
+{
+	std::cout << name << " yowls in anger!\n";
+}
+
 int main()
 {
-	Dog *burmo = new Dog();
-	Cat *cal = new Cat();
+	Pet * burmo = new Dog("Burmo");
+	Pet * cal = new Cat("Cal");
 	
 	burmo->eat();
 	cal->play();
 	
 	burmo->poop();
+	burmo->whine();
 	
 	cal->sleep();
+	cal->purr();
+	
+	burmo->bark();
+	cal->yowl();
 	
 	delete burmo;
 	delete cal;

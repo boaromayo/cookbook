@@ -27,34 +27,44 @@
 class Pet
 {
 public:
+	Pet(std::string name);
+
+public:
 	virtual void eat();
 	virtual void sleep();
 	virtual void poop();
 
 	virtual void play() = 0;
 
-private:
+	virtual void playWith(Pet * pet);
+	
+protected:
 	std::string name;
 }
 
 class Dog : public Pet
 {
 public:
-	Dog();
-	~Dog();
-
+	Dog(std::string n);
+	
 public:
 	void play();
 	void fetch();
+	void bark();
+	void whine();
+	
+	void playWith(Cat * cat);
 }
 
 class Cat : public Pet
 {
 public:
-	Cat();
-	~Cat();
+	Cat(std::string n);
 
 public:
 	void play();
 	void glare();
+	void meow();
+	void purr();
+	void yowl();
 }
