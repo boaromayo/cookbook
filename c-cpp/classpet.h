@@ -27,7 +27,7 @@
 class Pet
 {
 public:
-	Pet(std::string name);
+	Pet(std::string);
 
 public:
 	virtual void eat();
@@ -38,23 +38,22 @@ public:
 
 	virtual void playWith(Pet * pet);
 	
+	std::string getname() { return name; }
+	
 protected:
 	std::string name;
-}
+};
 
-class Dog : public Pet
+class Mouse : public Pet
 {
 public:
-	Dog(std::string n);
+	Mouse(std::string n);
 	
 public:
 	void play();
-	void fetch();
-	void bark();
-	void whine();
-	
-	void playWith(Cat * cat);
-}
+	void run();
+	void squeak();
+};
 
 class Cat : public Pet
 {
@@ -67,4 +66,20 @@ public:
 	void meow();
 	void purr();
 	void yowl();
-}
+	
+	void playWith(Mouse * mouse);
+};
+
+class Dog : public Pet
+{
+public:
+	Dog(std::string n);
+	
+public:
+	void play();
+	void fetch();
+	void bark();
+	void whine();
+	
+	void playWith(Cat * cat); // Testing polymorphism and overriding fcns
+};

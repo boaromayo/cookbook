@@ -22,6 +22,9 @@
  */
  
 #include <iostream>
+#include <string>
+
+#include "classpet.h"
 
 Pet::Pet(std::string n) : name(n) {}
 
@@ -42,10 +45,10 @@ void Pet::poop()
 
 void Pet::playWith(Pet * pet)
 {
-	std::cout << name << " plays around with " << pet->name << " !\n";
+	pet->play();
 }
 
-Dog::Dog(std::string n) : name(n) {}
+Dog::Dog(std::string n) : Pet(n) {}
 
 void Dog::play() 
 {
@@ -54,7 +57,7 @@ void Dog::play()
 
 void Dog::fetch()
 {
-	std::cout << name << " fetches the ball.\n"
+	std::cout << name << " fetches the ball.\n";
 }
 
 void Dog::bark()
@@ -67,12 +70,7 @@ void Dog::whine()
 	std::cout << name << " whines.\n";
 }
 
-void Dog::playWith(Cat * cat)
-{
-	std::cout << name << " chases " << cat->name << " !\n";
-}
-
-Cat::Cat(std::string n) : name(n) {}
+Cat::Cat(std::string n) : Pet(n) {}
 
 void Cat::play()
 {
@@ -99,22 +97,40 @@ void Cat::yowl()
 	std::cout << name << " yowls in anger!\n";
 }
 
+Mouse::Mouse(std::string n) : Pet(n) {}
+
+void Mouse::play()
+{
+	std::cout << name << " plays in the cage.\n";
+}
+
+void Mouse::run()
+{
+	std::cout << name << " scurries around.\n";
+}
+
+void Mouse::squeak()
+{
+	std::cout << name << " squeaks loudly!\n";
+}
+
 int main()
 {
 	Pet * burmo = new Dog("Burmo");
 	Pet * cal = new Cat("Cal");
+	Pet * marty = new Mouse("Marty");
 	
 	burmo->eat();
 	cal->play();
 	
 	burmo->poop();
-	burmo->whine();
 	
 	cal->sleep();
-	cal->purr();
 	
-	burmo->bark();
-	cal->yowl();
+	cal->eat();
+	cal->poop();
+	
+	burmo->playWith(marty);
 	
 	delete burmo;
 	delete cal;
