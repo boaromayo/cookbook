@@ -114,6 +114,18 @@ void Mouse::squeak()
 	std::cout << name << " squeaks loudly!\n";
 }
 
+Bird::Bird(std::string n) : name(n) {}
+
+void Bird::fly()
+{
+	std::cout << name << " flies around in his cage.\n";
+}
+
+void Bird::squawk()
+{
+	std::cout << name << " squawks a tune.\n";
+}
+
 int main()
 {
 	Pet * burmo = new Dog("Burmo");

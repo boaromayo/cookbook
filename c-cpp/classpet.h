@@ -44,6 +44,16 @@ protected:
 	std::string name;
 };
 
+class Bird : public Pet
+{
+public:
+	Bird(std::string n);
+	
+public:
+	void fly();
+	void squawk();
+};
+
 class Mouse : public Pet
 {
 public:
