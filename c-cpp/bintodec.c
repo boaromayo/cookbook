@@ -9,9 +9,7 @@ int bin_to_dec(char* bin)
 	double dec = 0; // Final result.
 
 	for (int i = 0; i < binlen; i++) {
-		char d = bin[i];
-
-		if (d == '1') {
+		if (bin[i] == '1') {
 			dec += (1 << (binlen - i) - 1);
 		}
 	}
