@@ -4,7 +4,7 @@
 
 int bin_to_dec(char* bin)
 {
-	int binlen = strlen(bin) - 1; // Remove trailing entry.
+	int binlen = strlen(bin);
 
 	double dec = 0; // Final result.
 
@@ -21,16 +21,15 @@ int bin_to_dec(char* bin)
 
 int main(int argv, char** argc)
 {
-	const unsigned int SIZE = 16;
-	char * bin = (char*)malloc(SIZE); // Allocate bits.
+	char * bin = (char*)malloc(8); // Allocate bits.
 
 	// Ask for binary input.
-	fgets(bin, SIZE, stdin);
+	fgets(bin, 8, stdin);
 
 	// Remove trailing chars.
 	int binlen = strlen(bin);
 	if (binlen > 0 && bin[binlen-1] == '\n') {
-		bin[binlen-1] == '\0';
+		bin[binlen-1] = '\0';
 	}
 
 	printf("%d\n", bin_to_dec(bin)); // Print out decimal equivalent.
