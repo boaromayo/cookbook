@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int bin_to_dec(char* bin)
+int bin_to_dec(char * bin)
 {
 	int binlen = strlen(bin);
 
@@ -13,11 +13,10 @@ int bin_to_dec(char* bin)
 			dec += (1 << (binlen - i) - 1);
 		}
 	}
-
 	return (int)dec;
 }
 
-int main(int argv, char** argc)
+int main(int argv, const char ** argc)
 {
 	char * bin = (char*)malloc(8); // Allocate bits.
 
