@@ -24,26 +24,25 @@
 
 class TwelveDays
 	def initialize
-		@day_no = 1
-		@last_day = 12
+		@day = 1
 		@rank_no = ["st", "nd", "rd", "th"]
 		@gift = {}
 		make_gifts
 	end
 	def print_song
-		@day_no.upto(@last_day) do
-			puts "On the #{rank(@day_no)} day of Christmas, my true love gave to me: "
-			@day_no.downto(1) do |i|
+		12.times do
+			puts "On the " + rank(@day) + " day of Christmas, my true love gave to me: "
+			@day.downto(1) do |i|
 				if i > 1
-					puts @gift["#{rank(i)}"] + ",\n"
-				elsif @day_no > 1 && i == 1
-					puts "and " + @gift["#{rank(i)}"].to_s + ".\n"
-				elsif @day_no == 1 && i == 1
-					puts @gift["#{rank(i)}"].to_s + ".\n"
+					puts @gift[rank(i)] + ",\n"
+				elsif @day > 1 && i == 1
+					puts "and " + @gift[rank(i)].to_s + ".\n"
+				elsif @day == 1 && i == 1
+					puts @gift[rank(i)].to_s + ".\n"
 				end
 			end
 			puts ""
-			@day_no += 1
+			@day += 1
 		end
 	end
 	def make_gifts
