@@ -36,9 +36,9 @@ class TwelveDays
 				if i > 1
 					puts @gift[rank(i)] + ",\n"
 				elsif @day > 1 && i == 1
-					puts "and " + @gift[rank(i)].to_s + ".\n"
+					puts "and " + @gift[rank(i)] + ".\n"
 				elsif @day == 1 && i == 1
-					puts @gift[rank(i)].to_s + ".\n"
+					puts @gift[rank(i)] + ".\n"
 				end
 			end
 			puts ""
@@ -46,19 +46,20 @@ class TwelveDays
 		end
 	end
 	def make_gifts
-		@gift = {"1st" => "a partridge in a pear tree",
-				"2nd" => "two turtle doves",
-				"3rd" => "three French hens",
-				"4th" => "four calling birds",
-				"5th" => "five GOL-DEN RINGS!!!", # I'm leaving this in caps because I can
-				"6th" => "six geese-a-laying",
-				"7th" => "seven swans-a-swimming",
-				"8th" => "eight maids-a-milking",
-				"9th" => "nine ladies dancing",
-				"10th" => "ten lords-a-leaping",
-				"11th" => "eleven pipers piping",
-				"12th" => "twelve drummers drumming"
-				}
+		@gift = {	
+			"1st" => "a partridge in a pear tree",
+			"2nd" => "two turtle doves",
+			"3rd" => "three French hens",
+			"4th" => "four calling birds",
+			"5th" => "five GOL-DEN RINGS!!!", # I'm leaving this in caps because I can
+			"6th" => "six geese-a-laying",
+			"7th" => "seven swans-a-swimming",
+			"8th" => "eight maids-a-milking",
+			"9th" => "nine ladies dancing",
+			"10th" => "ten lords-a-leaping",
+			"11th" => "eleven pipers piping",
+			"12th" => "twelve drummers drumming"
+			}
 	end
 	def rank(day)
 		return day.to_s + @rank_no[-1] if day > 4
