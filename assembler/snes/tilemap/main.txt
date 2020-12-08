@@ -1,0 +1,14 @@
+;====================================
+; SAMPLE ROM TO TEST TILEMAP
+;	Created 12/7/2020 boaromayo
+; * assemble in asar, not ca65 *
+;====================================
+arch 65816		;define the architecture set of assembler to be used
+lorom			;in this case, we're using a 65816 (or 65c816 modified, to be exact) 
+				;arch set to code in an SNES ROM
+				;lorom indicates this is a LoROM, not an ExHiROM
+
+org $008000
+
+Main:
+	jmp Main	;loop forever
